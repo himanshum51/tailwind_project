@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroNova</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        body::-webkit-scrollbar {
+        display: none; 
+    }
+    </style>
+</head>
+
+<body class="bg-black text-white relative overflow-y-scroll scrollbar-hide">
+    <canvas id="space-bg" class="fixed top-0 left-0 -z-1"></canvas>
+    <nav class="p-4 fixed w-full bg-black bg-opacity-90 flex justify-between items-center z-50">
+        <h1 class="text-xl font-bold text-gray-300">AstroNova</h1>
+
+       
+        <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        
+        <ul id="menu"
+            class="hidden md:flex space-x-6 absolute md:static top-16 right-4 md:right-auto bg-black bg-opacity-90 md:bg-transparent w-48 md:w-auto rounded-md md:rounded-none shadow-lg md:shadow-none md:flex-row flex-col md:space-x-6 p-4 md:p-0">
+            <li><a href="#home" class="block py-2 hover:text-gray-400">Home</a></li>
+            <li><a href="#about" class="block py-2 hover:text-gray-400">About</a></li>
+            <li><a href="#explore" class="block py-2 hover:text-gray-400">Explore</a></li>
+            <li><a href="#missions" class="block py-2 hover:text-gray-400">Missions</a></li>
+            <li><a href="#contact" class="block py-2 hover:text-gray-400">Contact</a></li>
+            <li><a href="news.html" class="block py-2 hover:text-gray-400">News</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+
+    <section id="home"
+        class="h-screen flex flex-col justify-center items-center text-center px-4 bg-black bg-opacity-10   ">
+        <h1 class="text-5xl font-bold text-gray-300">Explore the Universe</h1>
+        <p class="text-lg text-gray-400 mt-4">Discover the mysteries of space with an interactive cosmic experience.</p>
+        <a href="#explore"
+            class="mt-8 px-6 py-3 bg-[#042954] text-white rounded-full font-bold transition duration-300 hover:bg-[#357ab7]">Start
+            Journey</a>
+    </section>
+
+    <section id="about" class="py-16 text-center bg-gray-900">
+        <h2 class="text-3xl font-bold text-gray-300">About AstroNova</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">AstroNova is dedicated to space exploration and scientific
+            discovery. Our mission is to push the boundaries of what humanity knows about the cosmos.</p>
+    </section>
+
+    <section id="explore" class="py-16 text-center bg-gray-800">
+        <h2 class="text-3xl font-bold text-gray-300">The Cosmic Experience</h2>
+        <p class="text-gray-400 mt-4">Venture through the stars and witness the beauty of the universe through our
+            interactive simulations and data.</p>
+    </section>
+
+    <section id="missions" class="py-16 text-center bg-gray-900">
+        <h2 class="text-3xl font-bold text-gray-300">Our Missions</h2>
+        <p class="text-gray-400 mt-4">From Mars exploration to deep-space missions, AstroNova is pioneering
+            groundbreaking space technology and research.</p>
+        <div class="mt-6 flex justify-center space-x-6">
+            <div class="bg-gray-800 p-6 rounded-lg max-w-xs">
+                <h3 class="text-xl font-bold text-gray-300">Mars Initiative</h3>
+                <p class="text-gray-400 mt-2">Exploring the Red Planet for signs of life and sustainable habitats.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg max-w-xs">
+                <h3 class="text-xl font-bold text-gray-300">Exoplanet Search</h3>
+                <p class="text-gray-400 mt-2">Identifying Earth-like planets beyond our solar system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 text-center bg-gray-800">
+        <h2 class="text-3xl font-bold text-gray-300">Contact Us</h2>
+        <p class="text-gray-400 mt-4">Want to collaborate or learn more? Get in touch with us.</p>
+        <form class="mt-6 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-2 mb-4 bg-gray-700 text-white rounded">
+            <input type="email" placeholder="Your Email" class="w-full p-2 mb-4 bg-gray-700 text-white rounded">
+            <textarea placeholder="Your Message" class="w-full p-2 bg-gray-700 text-white rounded"></textarea>
+            <button type="submit"
+                class="mt-4 px-6 py-3 bg-[#042954] text-white rounded-full font-bold transition duration-300 hover:bg-[#357ab7]">Send
+                Message</button>
+        </form>
+    </section>
+
+    <footer class="bg-black bg-opacity-80 py-6 text-center">
+        <p class="text-gray-400">© 2025 AstroNova. All Rights Reserved.</p>
+    </footer>
+
+    <script src="three.js"></script>
+</body>
+
+</html>
